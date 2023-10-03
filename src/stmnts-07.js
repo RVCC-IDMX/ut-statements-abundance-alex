@@ -13,7 +13,7 @@
 
  */
 function logicalAnd(a, b) {
-  // write your code here & return
+  return a && b;
 }
 
 /**
@@ -23,7 +23,7 @@ function logicalAnd(a, b) {
  * @returns {boolean} - true if a or b is truthy, false if both are falsy
  */
 function logicalOr(a, b) {
-  // write your code here & return
+  return a || b;
 }
 
 /**
@@ -32,7 +32,7 @@ function logicalOr(a, b) {
  * @returns {boolean} - the opposite of the given boolean
  */
 function invertBoolean(bool) {
-  // write your code here & return
+  return !bool;
 }
 
 /**
@@ -49,7 +49,13 @@ function invertBoolean(bool) {
 
  */
 function numberOfOdds(num) {
-  // write your code here & return
+  let count = 0;
+  for (let i = 0; i < num; i++) {
+    if (i % 2 !== 0) {
+      count++;
+    }
+  }
+  return count;
 }
 
 /**
@@ -62,7 +68,11 @@ function numberOfOdds(num) {
  * ? For example, num is 4 then return 10 because 1 + 2 + 3 + 4 = 10.
  */
 function addUpTheNumbers(num) {
-  // write your code here & return
+  let sum = 0;
+  for (let i = 0; i <= num; i++) {
+    sum += i;
+  }
+  return sum;
 }
 
 /**
@@ -81,7 +91,16 @@ function addUpTheNumbers(num) {
  * ?
  */
 function gradeGenerator(score) {
-  // write your code here & return
+  if (score < 60) {
+    return 'F';
+  } if (score < 70) {
+    return 'D';
+  } if (score < 80) {
+    return 'C';
+  } if (score < 90) {
+    return 'B';
+  }
+  return 'A';
 }
 
 /**
@@ -101,7 +120,9 @@ function gradeGenerator(score) {
  * ? it's 'an A' (not a A) and 'an F' (not a F)
  */
 function getGrade(name, score) {
-  // write your code here & return
+  const letterGrade = gradeGenerator(score);
+  const article = letterGrade === 'A' || letterGrade === 'F' ? 'an' : 'a';
+  return `${name} got ${article} ${letterGrade}`;
 }
 
 module.exports = {
